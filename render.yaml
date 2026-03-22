@@ -19,6 +19,8 @@ services:
         sync: false
       - key: DATA_DIR
         value: ./data
+      - key: BASE_URL
+        value: https://clarifl.onrender.com
     disk:
       name: clarifi-data
       mountPath: /app/backend/data

@@ -100,7 +100,8 @@ app.post('/api/register', (req, res) => {
   res.json({ success: true, message: 'Verification email sent', user: { name, email, tier: users[email].tier, verified: false } });
 
   // Send email in background
-  const verifyUrl = `http://localhost:${PORT}/api/verify-email?token=${token}&email=${encodeURIComponent(email)}`;
+  const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+  const verifyUrl = `${BASE_URL}/api/verify-email?token=${token}&email=${encodeURIComponent(email)}`;
   transporter.sendMail({
     from: `"ClariFi" <${process.env.EMAIL_USER}>`,
     to: email,
