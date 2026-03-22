@@ -141,6 +141,26 @@ app.post('/api/register', (req, res) => {
   });
 });
 
+// GET /api/debug-email — test email delivery
+app.get('/api/debug-email', (req, res) => {
+  const email = req.query.email;
+  if (!email) return res.send('Please provide ?email=... in the URL. Example: /api/debug-email?email=test@example.com');
+  
+  console.log(`Debug email request for: ${email}`);
+  transporter.sendMail({
+    from: `"ClariFi Debug" <${process.env.EMAIL_USER || 'no-reply@localhost'}>`,
+    to: email,
+    subject: 'ClariFi Debug Email',
+    text: 'SMTP configuration is working!',
+  }).then(info => {
+    console.log('Debug email sent successfully');
+    res.json({ success: true, info });
+  }).catch(err => {
+    console.error('Debug email failed:', err.message);
+    res.status(500).json({ success: false, error: err.message, stack: err.stack });
+  });
+});
+
 // GET /api/verify-email — called from email link
 app.get('/api/verify-email', (req, res) => {
   const { token, email } = req.query;
