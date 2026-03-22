@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: clarifi
+    env: docker
+    plan: free
+    region: singapore
+    branch: ML
+    numInstances: 1
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: DATA_DIR
+        value: ./data
+    disk:
+      name: clarifi-data
+      mountPath: /app/backend/data
+      sizeGB: 1

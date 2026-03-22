@@ -32,7 +32,11 @@ const razorpay = new Razorpay({
 });
 
 // ─── User Storage ────────────────────────────────────────────────────────────
-const USERS_FILE = path.join(__dirname, 'users.json');
+const DATA_DIR = process.env.DATA_DIR || __dirname;
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+const USERS_FILE = path.join(DATA_DIR, 'users.json');
 
 function readUsers() {
   if (!fs.existsSync(USERS_FILE)) return {};

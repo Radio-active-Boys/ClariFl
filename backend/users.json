@@ -1,0 +1,53 @@
+{
+  "witbolt45@gmail.com": {
+    "name": "rohith",
+    "email": "witbolt45@gmail.com",
+    "tier": "free",
+    "verified": false,
+    "verificationToken": "eb931856d75f090f1d8a2897a8dcba66a98761d656d10652776a77bedae0b1b9",
+    "createdAt": "2026-03-21T07:59:43.378Z"
+  },
+  "test@test.com": {
+    "name": "Test",
+    "email": "test@test.com",
+    "tier": "free",
+    "verified": false,
+    "verificationToken": "2c22c1064f5c8b2fe574f4b2b0a73d14fa7fc0c4e1aa34ef7ee634d32605bb36",
+    "createdAt": "2026-03-21T08:04:30.441Z"
+  },
+  "rohith.bolt18@gmail.com": {
+    "name": "rohith",
+    "email": "rohith.bolt18@gmail.com",
+    "tier": "free",
+    "verified": false,
+    "verificationToken": "babfe0e8e1eb79ec224dec16d2c115bb81f7032a3b0a12b9640944ad4383c1a9",
+    "createdAt": "2026-03-21T08:06:57.140Z"
+  },
+  "gsn.rohith@gmail.com": {
+    "name": "rohith",
+    "email": "gsn.rohith@gmail.com",
+    "tier": "free",
+    "verified": false,
+    "verificationToken": "0d04a1c94d2251c4e20412259d65fa2d1d5ed970ddffeb6e1effcba8e2f94d48",
+    "createdAt": "2026-03-21T08:13:09.270Z"
+  },
+  "aswinak0330@gmail.com": {
+    "name": "Aswin Kumar",
+    "email": "aswinak0330@gmail.com",
+    "tier": "premium",
+    "verified": true,
+    "verificationToken": null,
+    "createdAt": "2026-03-21T10:45:46.112Z",
+    "paidAt": "2026-03-21T12:29:13.749Z",
+    "payment": true,
+    "paymentId": "pay_STsMbGR8CVnsZJ"
+  },
+  "iitjammu7@gmail.com": {
+    "name": "Vishal",
+    "email": "iitjammu7@gmail.com",
+    "tier": "free",
+    "verified": false,
+    "verificationToken": "5f5674e58f2ecac82eaee1cb6e2db485b856f1a19486c513c69e8e51f4d4a832",
+    "createdAt": "2026-03-22T05:01:53.313Z"
+  }
+}
