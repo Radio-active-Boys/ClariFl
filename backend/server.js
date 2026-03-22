@@ -49,8 +49,14 @@ function writeUsers(users) {
 }
 
 // ─── Email Transporter ───────────────────────────────────────────────────────
+console.log('Initializing Email Transporter...');
+console.log('EMAIL_USER:', process.env.EMAIL_USER ? 'Present' : 'Missing');
+console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? 'Present' : 'Missing');
+
 const smtpConfig = process.env.EMAIL_USER && process.env.EMAIL_PASS ? {
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true, 
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -68,7 +74,14 @@ const smtpConfig = process.env.EMAIL_USER && process.env.EMAIL_PASS ? {
   }
 };
 
+console.log(`Using SMTP Host: ${smtpConfig.host}, Port: ${smtpConfig.port}`);
+
 const transporter = nodemailer.createTransport(smtpConfig);
+
+transporter.verify((error, success) => {
+  if (error) console.error('SMTP Verification Failed:', error.message);
+  else console.log('SMTP Server is ready');
+});
 
 // ─── Auth Routes ─────────────────────────────────────────────────────────────
 
